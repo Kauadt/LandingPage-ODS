@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;900&display=swap');
 
 .wrapper{
     position: absolute;
@@ -11,3 +12,33 @@
     background-color: #000000 !important; 
 }
 
+.teste{
+    position: absolute;
+max-width: 100%;
+left: 230px;
+top: 360px;
+background-color: aqua;
+}
+
+.font{
+    font-family: 'Raleway', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 47px;
+color: #000000;
+}
+
+h1{
+    color: #de1768;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 74px;
+    line-height: 87px;
+}
+
+
+.image-obj{
+    width: 900px;
+}
