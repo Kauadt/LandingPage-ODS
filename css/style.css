@@ -89,3 +89,7 @@ h1 {
     margin-right: auto;
     align-items: center;
 }
+
+.container-fluid{
+    padding: 0;
+}
