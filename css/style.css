@@ -94,4 +94,14 @@ h1 {
     padding: 0;
 }
 
+a:link{
+    color: #E4DAE8;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #E4DAE8;
+    text-decoration: none;
+}
+
 
