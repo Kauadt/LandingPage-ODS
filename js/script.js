@@ -224,7 +224,7 @@ function noticias(){
         "</div>" +
         "</div>" +
         "<div class='col-md-6 mt-3 pt-4'>" +
-            "<h1 class='display-5 font2'>" +
+            "<h1 class='display-5 font2 ps-2'>" +
             y[i].getElementsByTagName("titulo")[0].childNodes[0].nodeValue + "</h1>" +
             "<p class='font3' style='padding-top: 20px;'>" +
             y[i].getElementsByTagName("blogtext")[0].childNodes[0].nodeValue.substr(0, 273) + "...</p>" +
@@ -246,9 +246,25 @@ function funcaoPostagem() {
 
     document.write(
         "<h1 style='color: #de1768;'>" + y[i].getElementsByTagName("titulo")[0].childNodes[0].nodeValue + "</h1>" +
-        "<h6 class='font'>" + y[i].getElementsByTagName("subtitle")[0].childNodes[0].nodeValue + "</h6>" + 
-        "<p class='font mt-5'>" + y[i].getElementsByTagName("blogtext")[0].childNodes[0].nodeValue + "</p>"
+        "<p class='font mt-5 mb-5'>" + y[i].getElementsByTagName("blogtext")[0].childNodes[0].nodeValue + "</p>" +
+        "<div class='row'>" +
+        "<div class='col-xxl-8 col-md-6 col-sm-6-col-xs-4 pt-5 pb-3 center'>" +
+        "<img src='images/" + y[i].getElementsByTagName("imageblog")[0].childNodes[0].nodeValue + "' class='img-fluid'>" +
+        "</div>" +
+        "</div>" +
+        "<p class='font mt-5 mb-5'>" + y[i].getElementsByTagName("blogtext2")[0].childNodes[0].nodeValue + "</p>" +
+        "<button type='button' class='btn btn-dark ms-5 mt-3 mb-5'>" +
+        "<a href='" + y[i].getElementsByTagName("fonte")[0].childNodes[0].nodeValue + "'>Notícia Original</a>" +
+        "</button>"
         );
+}
+
+
+function titleGeralNoticias(){
+    url = new URL(window.location.href)
+    parametro = url.searchParams;
+    i = parametro.get("codigo_noticia");
+    y[i].getElementsByTagName("titulo")[0].childNodes[0].nodeValue
 }
 
 // Blog
