@@ -3,7 +3,8 @@ xmlhttp.open("GET", "xml/conteudo.xml", false);
 xmlhttp.send();
 xmlDoc = xmlhttp.responseXML;
 x = xmlDoc.getElementsByTagName("content");
-y = xmlDoc.getElementsByTagName("blog");
+y = xmlDoc.getElementsByTagName("postagem");
+
 
 function imagenavbar() {
     for (i = x.length - 1; i >= 0; i--) {
@@ -192,16 +193,16 @@ function card6() {
 
     for (i = x.length - 1; i >= 0; i--) {
         document.write(
-        "<div class='col-12 col-sm-6 col-lg-4 mt-2'>" +
-        "<div class='card bg-dark' style='min-height: 270px;'>" +
-        "<div class='card-body'>" +
-        "<h5 class='card-title text-center font2 fst-italic'>" +
+            "<div class='col-12 col-sm-6 col-lg-4 mt-2'>" +
+            "<div class='card bg-dark' style='min-height: 270px;'>" +
+            "<div class='card-body'>" +
+            "<h5 class='card-title text-center font2 fst-italic'>" +
             x[i].getElementsByTagName("cardtitle6")[0].childNodes[0].nodeValue + "</h5>" +
             "<p class='card-text font3'>"
             + x[i].getElementsByTagName("cardtext6")[0].childNodes[0].nodeValue + "</p>"); +
-            "</div>" +
-        "</div>" +
-        "</div>"
+                "</div>" +
+                "</div>" +
+                "</div>"
     }
 }
 
@@ -209,16 +210,34 @@ function card6() {
 
 // Blog
 
-function notPrincipal() {
-    for (i = y.length - 1; i >= 0; i--) {
-            document.write(
-                "<h1 class='display-5 font2'>" +
-                 y[i].getElementsByTagName("titulo")[0].childNodes[0].nodeValue + "</h1>" +
-                "<p class='font3' style='padding-top: 20px;'>"+
-                 y[i].getElementsByTagName("blogtext")[0].childNodes[0].nodeValue.substr(0, 273) + "...</p>" +
-                 "<a class='font3 lead' style='padding-top: 20px; padding-left: 35px' href='noticias.html?codigo_noticia="+i+"'>"+y[i].getElementsByTagName("lermais")[0].childNodes[0].nodeValue+"</a>"  );
+function noticias(){
+    for(i = y.length - 1; i >= 0; i--){
+        document.write(
+            "<div class='row mt-5'>" +
+        "<div class='areanot center'>" +
+        "<div class='row'>" +
+        "<div class='col-md-6 col-sm-12'>" +
+            "<div class='quadrado'>" +
+            "<div class='imagem'>" +
+            "<img src='images/" + y[i].getElementsByTagName("imageblog")[0].childNodes[0].nodeValue + "' class='img-fluid'>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "<div class='col-md-6 mt-3 pt-4'>" +
+            "<h1 class='display-5 font2'>" +
+            y[i].getElementsByTagName("titulo")[0].childNodes[0].nodeValue + "</h1>" +
+            "<p class='font3' style='padding-top: 20px;'>" +
+            y[i].getElementsByTagName("blogtext")[0].childNodes[0].nodeValue.substr(0, 273) + "...</p>" +
+            "<a class='font3 lead' style='padding-top: 20px; padding-left: 35px' href='noticias.html?codigo_noticia=" + i + "'>" + y[i].getElementsByTagName("lermais")[0].childNodes[0].nodeValue + "</a>" +
+            "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>"
+        );
     }
 }
+
+
 
 function funcaoPostagem() {
     url = new URL(window.location.href)
@@ -227,22 +246,9 @@ function funcaoPostagem() {
 
     document.write(
         "<h1 style='color: #de1768;'>" + y[i].getElementsByTagName("titulo")[0].childNodes[0].nodeValue + "</h1>" +
-        "<h6 class='font'>" + y[i].getElementsByTagName("subtitle")[0].childNodes[0].nodeValue + "</h6>" +
-        "<p class='font mt-5'>" + y[i].getElementsByTagName("blogtext")[0].childNodes[0].nodeValue + "</p>");
-}
-
-
-
-function noticias(){
-    for(i = y.length - 1; i >= 0; i--){
-        document.write(
-            "<h3 class='mb-0 font2'>" +
-             y[i].getElementsByTagName("titulo1")[0].childNodes[0].nodeValue + "</h3>" +
-            "<p class='card-text mb-auto font3'>"+
-             y[i].getElementsByTagName("blogtext1")[0].childNodes[0].nodeValue.substr(0, 273) + "...</p>" + 
-             "<a class='font3 stretched-link pt-3' href='noticias.html?codigo_noticia="+i+"'>"+
-             y[i].getElementsByTagName("lermais1")[0].childNodes[0].nodeValue+"</a>");
-    }
+        "<h6 class='font'>" + y[i].getElementsByTagName("subtitle")[0].childNodes[0].nodeValue + "</h6>" + 
+        "<p class='font mt-5'>" + y[i].getElementsByTagName("blogtext")[0].childNodes[0].nodeValue + "</p>"
+        );
 }
 
 // Blog
